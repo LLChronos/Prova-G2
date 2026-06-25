@@ -1,0 +1,250 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-shell.theme-dark {
+  --bg: #07111f;
+  --surface: rgba(8, 15, 31, 0.9);
+  --surface-strong: #101b33;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.25);
+  --accent: #8b5cf6;
+  --accent-strong: #c084fc;
+  --button: #22c55e;
+  --button-hover: #16a34a;
+  background: linear-gradient(135deg, #07111f 0%, #111827 100%);
+  color: var(--text);
+}
+
+.app-shell.theme-light {
+  --bg: #f4f7ff;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-strong: #ffffff;
+  --text: #111827;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.1);
+  --accent: #7c3aed;
+  --accent-strong: #a78bfa;
+  --button: #2563eb;
+  --button-hover: #1d4ed8;
+  background: linear-gradient(135deg, #f9f5ff 0%, #eef2ff 100%);
+  color: var(--text);
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-card,
+.side-card,
+.feed-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.hero-card h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+}
+
+.hero-copy {
+  margin: 0;
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.theme-toggle,
+.auth-form button,
+.composer button,
+.ghost-btn {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover,
+.auth-form button:hover,
+.composer button:hover,
+.ghost-btn:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+}
+
+.side-card,
+.feed-card {
+  padding: 24px;
+}
+
+.card-header h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.switcher {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.switcher button {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.switcher button.active {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.auth-form,
+.composer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form input,
+.composer textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.auth-form button,
+.composer button {
+  padding: 12px 16px;
+  background: var(--button);
+  color: white;
+  font-weight: 700;
+}
+
+.auth-form button:hover,
+.composer button:hover {
+  background: var(--button-hover);
+}
+
+.profile-card,
+.guest-note {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--surface-strong);
+  color: var(--muted);
+}
+
+.ghost-btn {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.posts-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+  background: var(--surface-strong);
+}
+
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.post-head strong {
+  display: block;
+}
+
+.post-head span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.like-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.like-btn.liked {
+  background: rgba(236, 72, 153, 0.16);
+  color: #ec4899;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
